@@ -1,11 +1,11 @@
 import Task from "./Task";
-
+// show the list of our tasks based on the status (filter prop) we choose (completed , incompleted  or all)
 const ListTask = ({ list, filter }) => {
   return (
     <div>
       {filter === "all"
         ? list.map((el) => (
-            <div>
+            <div className="todo-row">
               <Task item={el} />
             </div>
           ))
@@ -13,14 +13,14 @@ const ListTask = ({ list, filter }) => {
         ? list
             .filter((el) => el.isDone === true)
             .map((el) => (
-              <div>
+              <div className="todo-row">
                 <Task item={el} />
               </div>
             ))
         : list
-            .filter((el) => el.isDone === false)
+            .filter((el) => el.isDone == false)
             .map((el) => (
-              <div>
+              <div className="todo-row">
                 <Task item={el} />
               </div>
             ))}

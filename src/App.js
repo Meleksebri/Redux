@@ -9,11 +9,6 @@ function App() {
     return state;
   });
 
-  const donelist = list.filter((el) => el.isDone === true);
-  const undonelist = list.filter((el) => el.isDone === false);
-  console.log(donelist);
-  console.log(undonelist);
-
   const [filtered, setFiltered] = useState("all");
 
   const donetasks = (e) => {
@@ -32,11 +27,21 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="todo-app">
+      <h1>What's the Plan for Today?</h1>
       <AddTask />
-      <button onClick={alltasks}>ALL</button>
-      <button onClick={donetasks}>Done tasks</button>
-      <button onClick={undonetasks}>Undone tasks</button>
+      <div className="filter-container">
+        <button className="filter" onClick={alltasks} autoFocus>
+          All
+        </button>
+        <button className="filter" onClick={donetasks}>
+          Completed
+        </button>
+        <button className="filter" onClick={undonetasks}>
+          Incompleted
+        </button>
+      </div>
+
       <ListTask list={list} filter={filtered} />
     </div>
   );
