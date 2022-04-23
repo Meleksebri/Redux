@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Getting Started with the project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a todo app created using react and redux .
+In the todo app , the user can be able to add a new todo , filter the tasks by (done/not/all) , edit a task and delete a task.
+To create the project , i used redux toolkit to create the store and the reducer and I also used redux hooks ( useSelector and useDispatch ).
 
 ## Available Scripts
 
